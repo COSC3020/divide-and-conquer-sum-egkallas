@@ -19,3 +19,5 @@ function divNConq(a) {
     }
 }
 
+
+//Help: https://stackoverflow.com/questions/26344144/divide-and-conquer-algorithm-for-sum-of-integer-array
