@@ -30,6 +30,6 @@ most important part. Add your answer to this markdown file.
 Recurrence relation:
 
 T(n) = { 1 if n <= 2
-       { 3T(n/3)+1 if n > 1
+         3T(n/3)+1 if n > 1
 
 The $\Theta$ time complexity of this algorithm is n. The time complexity of the algorithm grows linearly because although it breaks divides the problem by 3 each time, it just divides the problem into separate smaller sums, and must linearly add all of those sums as the recursion moves up the call stack, thus resulting in a linear time complexity. 
