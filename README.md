@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/E1vcEWuv)
 # Divide and Conquer Sum
 
 In the lectures, we've covered merge sort, which uses a divide-and-conquer
@@ -25,3 +26,22 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+Recurrence relation:
+
+T(n) = { 1 if n <= 2
+       { 3T(n/3)+C if n > 2
+
+Solution:
+
+T(n) = 3T(n/3) + C
+T(n/3) = 3T(n/3^2) + C
+Substituting:
+T(n) = 3[3T (n/3^2) + C] + C
+Expand: 3^2T(n/3^2) + 3C
+Eventually that pattern becomes:
+3^iT(n/3^i) + n * C
+To get to the base case, we can substitute log_3(n) for i and solve.
+Eventually getting to $\Theta$(n) linear time.
+
+The $\Theta$ time complexity of this algorithm is n. The time complexity of the algorithm grows linearly because although it divides the problem by 3 each time, it just divides the problem into separate smaller sums, and must linearly add all of those sums as the recursion moves up the call stack, thus resulting in a linear time complexity. 
