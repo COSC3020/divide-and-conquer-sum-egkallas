@@ -29,7 +29,19 @@ most important part. Add your answer to this markdown file.
 
 Recurrence relation:
 
-T(n) = { 1 if n <= 2 <br>
-            { 3T(n/3)+1 if n > 1
+T(n) = { 1 if n <= 2
+       { 3T(n/3)+C if n > 2
+
+Solution:
+
+T(n) = 3T(n/3) + C
+T(n/3) = 3T(n/3^2) + C
+Substituting:
+T(n) = 3[3T (n/3^2) + C] + C
+Expand: 3^2T(n/3^2) + 3C
+Eventually that pattern becomes:
+3^iT(n/3^i) + n * C
+To get to the base case, we can substitute log_3(n) for i and solve.
+Eventually getting to $\Theta$(n) linear time.
 
 The $\Theta$ time complexity of this algorithm is n. The time complexity of the algorithm grows linearly because although it divides the problem by 3 each time, it just divides the problem into separate smaller sums, and must linearly add all of those sums as the recursion moves up the call stack, thus resulting in a linear time complexity. 
